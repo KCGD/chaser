@@ -1,0 +1,17 @@
+autocomplete:
+    needs 2 modules:
+        one for pacman: use pacman -Ss, parse output and fuzzy search for name (it will include descriptions by default so manual name search is required)
+        one for the aur: learn how their API works
+        make sure to rate limit how often requests can be sent (when doing auto searches). Dont want to pull a manjaro.
+
+Parsing args:
+    full commands dont need extra logic
+    small commands will work like a sort of search function:
+    take -Rdo for example:
+        -R will put you in the remove section
+            d will put you in the dependency section
+                o will tell it to remove orphaned dependencies.
+    or -Io
+        -I will put you in the install section
+            o will tell it to output a package to the file
+            (see how o can be reused because the initial command -I switched the section)        

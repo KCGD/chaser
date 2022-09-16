@@ -1,1 +1,64 @@
-help info goes here
+*****************************************************************************
+* Chaser (v1.0.0) - A package manager and AUR helper built ontop of pacman! *
+*****************************************************************************
+
+
+Use chaser --help <command name> for more detailed documentation.
+
+
+How to read this guide:
+    This guide displays commands with the following format:
+        (full command name) (shortened command) (required input)
+        Subcommands will follow the same format
+
+
+    This program uses a hierarchical structure for it's arguments.
+    this means that the functions of certain arguments can change based on what other proceeding arguments
+        
+
+
+    Full commands need to be entered individually: 
+        1) --install --packageOnly some_package
+
+    Shortened commands can be compounded: 
+        2) -Io some_package
+
+    In this case, commands 1 and two will provide the same functionality.
+
+    For more details on how a command works / exactly what it does, see it's help page
+        accessable with --help (command or shortened command WITHOUT dashes). Example: "--help Io" or "--help remove"
+
+
+Usage:
+    chaser <operations(s)> <package(s)>
+
+
+Installation / Uninstallation:
+    --install   (-I)    <packages>
+        --packageOnly            (-Io)
+
+    --remove    (-R)    <packages>
+        --includeDeps            (-Rd)
+        --includeOrphanedDeps    (-Rdo)
+
+
+
+Package/Dependency management:
+    --list      (-L)
+        --dependancies      (-Ld)   <package>
+        --dependants        (-Ldd)  <package>
+        --orphans           (-Lo)
+        --explicitInstalls  (-Li)
+
+    --search    (-S)    <packages>
+        --local             (-Sl)   <package>
+        --repo              (-Sr)   <package>
+        --aur               (-Sra)  <package>
+        --repoAndAur        (-Srar) <package>
+
+    --mark      (-M)
+        --markExplicitInstall   (-Me)   <package(s)> <status(true/false)>
+
+    --clean     (-C)
+        --cleanOrphans          (-Co)
+        --cleanCache            (-Cc)
